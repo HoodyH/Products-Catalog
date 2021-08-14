@@ -1,0 +1,16 @@
+site_name: Documentazione Prodotti
+site_url: https://example.com/
+nav:
+  - Home: 'index.md'
+  - 1. Interno Quadro:
+    - 1. Alimentatori: 'alimentatori/alimentatori.md'
+    - 2. Automazione:
+      - 1. Micro-PLC: 'default.md'
+      - 2. PLC: 'default.md'
+      - 3. HMI: 'default.md'
+      - 4. I/O Remoti: 'default.md'
+      - 5. Telecontrollo: 'default.md'
+      - 6. Rete: 'default.md'
+    - 3. Pulsanti: 'pulsanti.md'
+theme:
+    name: 'readthedocs'
