@@ -11,6 +11,6 @@ nav:
       - 4. I/O Remoti: 'default.md'
       - 5. Telecontrollo: 'default.md'
       - 6. Rete: 'default.md'
-    - 3. Pulsanti: 'pulsanti.md'
+    - 3. Pulsanti: 'default.md'
 theme:
     name: 'readthedocs'
