@@ -1,19 +1,39 @@
 site_name: Documentazione Prodotti
-site_url: https://example.com/
 nav:
   - Home: 'index.md'
-  - 1. Interno Quadro:
-    - 1. Alimentatori: 'alimentatori/alimentatori.md'
+  - 1. Elettronica Interno Quadro:
+    - 1. Alimentatori: 'files/1-02-01-00.md'
     - 2. Automazione:
-      - 1. Micro-PLC: 'default.md'
-      - 2. PLC: 'default.md'
-      - 3. HMI: 'default.md'
-      - 4. I/O Remoti: 'default.md'
-      - 5. Telecontrollo: 'default.md'
-      - 6. Rete: 'default.md'
-    - 3. Pulsanti: 'default.md'
+      - 1. Micro-PLC: 'files/1-02-01-02.md'
+      # - 2. PLC: 'default.md'
+      # - 3. HMI: 'default.md'
+      # - 4. I/O Remoti: 'default.md'
+      # - 5. Telecontrollo: 'default.md'
+      # - 6. Rete: 'default.md'
+  - 2. Elettromeccanica Interno Quadro:
+    - 6. Dialogo operatore:
+      - 1. Pulsanti: 'files/2-06-01.md'
 theme:
-    name: 'readthedocs'
-
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  language: it
+  logo: Null
+  features:
+    # - navigation.tabs
+    - navigation.sections
+    - navigation.top
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+extra:
+  # homepage: http://example.com/
+  generator: false
+  version: 1.0.0
+copyright: Copyright &copy; 2020
 docs_dir: 'catalog'
 site_dir: 'docs'
