@@ -1,18 +1,5 @@
 site_name: Documentazione Prodotti
-nav:
-  - Home: 'index.md'
-  - 1. Elettronica Interno Quadro:
-    - 1. Alimentatori: 'files/1-02-01-00.md'
-    - 2. Automazione:
-      - 1. Micro-PLC: 'files/1-02-01-02.md'
-      # - 2. PLC: 'default.md'
-      # - 3. HMI: 'default.md'
-      # - 4. I/O Remoti: 'default.md'
-      # - 5. Telecontrollo: 'default.md'
-      # - 6. Rete: 'default.md'
-  - 2. Elettromeccanica Interno Quadro:
-    - 6. Dialogo operatore:
-      - 1. Pulsanti: 'files/2-06-01.md'
+nav: {{nav}}
 theme:
   name: material
   palette:
@@ -34,6 +21,6 @@ extra:
   # homepage: http://example.com/
   generator: false
   version: 1.0.0
-copyright: Copyright &copy; 2020
-docs_dir: 'catalog'
-site_dir: 'docs'
+copyright: Copyright &copy; 2021
+docs_dir: ''
+site_dir: '../docs'

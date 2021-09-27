@@ -1,0 +1,5 @@
+CATALOG_CONFIG_FILE = 'catalog/catalog.json'
+MKDOCS_TEMPLATE_FILE = 'mkdocs.yml'
+MKDOCS_CONFIG_FILE = 'catalog/docs/mkdocs.yml'
+PRODUCT_TEMPLATE_FILENAME = 'catalog/templates/product.md'
+PRODUCT_DESTINATION_PATH = 'catalog/docs/files/'
