@@ -1,4 +1,6 @@
-from .configurations import PRODUCT_TEMPLATE_FILENAME, PRODUCT_DESTINATION_PATH
+import os
+from core.configurations import PRODUCT_TEMPLATE_FILENAME, BUILD_ITEM_DESTINATION_PATH
+
 
 class FileGenerator:
 
@@ -22,11 +24,13 @@ class FileGenerator:
                     .replace('{{link}}', el.get('link', ''))
                 fr.seek(0)
 
-        with open(PRODUCT_DESTINATION_PATH + filename, 'w') as fw:
+        with open(BUILD_ITEM_DESTINATION_PATH + filename, 'w') as fw:
             fw.write(product_data)
 
     def generate(self):
         """Generate all the files in place"""
+
+        os.mkdir(BUILD_ITEM_DESTINATION_PATH)
 
         for first_id, first_key in enumerate(self.data.keys()):
             yaml_first_key = f'{first_id + 1}. {first_key}'
