@@ -5,7 +5,8 @@ import yaml
 from core.configurations import (
     CATALOG_CONFIG_FILE,
     MKDOCS_TEMPLATE_FILE,
-    BUILD_DESTINATION_PATH
+    BUILD_DESTINATION_PATH,
+    FILES_TO_COPY
 )
 from core.generator import FileGenerator
 
@@ -44,9 +45,10 @@ class Bundler:
         with open(f'{BUILD_DESTINATION_PATH}/mkdocs.yml', 'w') as yaml_file:
             yaml_file.write(yaml_data)
 
-    def _copy_data(self):
+    @staticmethod
+    def _copy_data():
         """copy extra static data"""
-        for source, destination in self.to_copy:
+        for source, destination in FILES_TO_COPY:
             try:
                 shutil.copyfile(source, destination)
             except FileNotFoundError:
