@@ -14,8 +14,11 @@ from core.reader import CsvReader
 
 
 class Bundler:
+    
+    def __init__(self):
+        self.nav_structure: list = []
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self, auto_numerate=False, *args, **kwargs):
         """Delete and recreate the build dir"""
 
         cr = CsvReader()
@@ -36,29 +39,32 @@ class Bundler:
 
         # generate docs
         fg = FileGenerator(cr.catalog)
-        fg.generate()
-        self._update_nav(fg.yaml_structure_data)
+        fg.generate(auto_numerate=auto_numerate)
+        self.nav_structure = fg.yaml_structure_data
         self._copy_data()
+        self._update_nav()
 
-    @staticmethod
-    def _update_nav(yaml_structure_data: list):
+    def _copy_data(self):
+        """copy extra static data"""
+        for nav_name, source, destination in FILES_TO_COPY:
+            try:
+                shutil.copyfile(source, destination)
+            
+                # append extra files to the structure
+                self.nav_structure.insert(0, {nav_name: destination[len(BUILD_DESTINATION_PATH)+1:]})
+        
+            except FileNotFoundError:
+                continue
+
+    def _update_nav(self):
         """Update nav structure"""
         with open(MKDOCS_TEMPLATE_FILE, 'r') as yaml_file:
             yaml_data = yaml_file.read()
 
         # edit nav structure
-        nav = yaml.dump(yaml_structure_data, sort_keys=False)
+        nav = yaml.dump(self.nav_structure, sort_keys=False)
         yaml_data = yaml_data.replace('{{nav}}', f'\n{nav}')
 
         # save nav structure
         with open(f'{BUILD_DESTINATION_PATH}/mkdocs.yml', 'w') as yaml_file:
             yaml_file.write(yaml_data)
-
-    @staticmethod
-    def _copy_data():
-        """copy extra static data"""
-        for source, destination in FILES_TO_COPY:
-            try:
-                shutil.copyfile(source, destination)
-            except FileNotFoundError:
-                continue

@@ -27,27 +27,36 @@ class FileGenerator:
         with open(BUILD_ITEM_DESTINATION_PATH + filename, 'w') as fw:
             fw.write(product_data)
 
-    def generate(self):
-        """Generate all the files in place"""
+    def generate(self, auto_numerate=False):
+        """
+        Generate all the files in place
+        :param auto_numerate: auto numerate the index, or numerate basing on csv order definition
+        """
 
         os.mkdir(BUILD_ITEM_DESTINATION_PATH)
 
         for first_id, first_key in enumerate(self.data.keys()):
-            yaml_first_key = f'{first_id + 1}. {first_key}'
+            yaml_first_key = f'{first_id + 1}. {first_key}' if auto_numerate else first_key
             yaml_first_structure_data = {yaml_first_key: []}
 
             for second_id, second_key in enumerate(self.data[first_key].keys()):
-                yaml_second_key = f'{second_id + 1}. {second_key}'
+                yaml_second_key = f'{second_id + 1}. {second_key}' if auto_numerate else second_key
                 yaml_second_structure_data = {yaml_second_key: []}
 
                 for third_id, third_key in enumerate(self.data[first_key][second_key].keys()):
-                    filename = f'{first_id + 1}-{second_id + 1}-{third_id + 1}.md'
-                    yaml_third_key = f'{third_id + 1}. {third_key}'
+                    # get item data
+                    data = self.data[first_key][second_key][third_key]
+                    
+                    # get the file name vit generate numeration from csv or auto-generate it
+                    filename = data.get('filename')
+                    if auto_numerate:
+                        filename = f'{first_id + 1}-{second_id + 1}-{third_id + 1}.md'
+                    yaml_third_key = f'{third_id + 1}. {third_key}' if auto_numerate else third_key
 
                     # Generate the file in the filesystem from the template
-                    data = self.data[first_key][second_key][third_key]
-                    self._generate_product_file(filename, data)
-
+                    self._generate_product_file(filename, data.get('data', []))
+                    
+                    # fill yaml structure
                     yaml_second_structure_data[yaml_second_key].append({
                         yaml_third_key: f'files/{filename}'
                     })
@@ -55,5 +64,3 @@ class FileGenerator:
                 yaml_first_structure_data[yaml_first_key].append(yaml_second_structure_data)
 
             self.yaml_structure_data.append(yaml_first_structure_data)
-
-        self.yaml_structure_data.insert(0, {'Home': 'index.md'})
