@@ -4,7 +4,7 @@ import shutil
 import yaml
 from core.configurations import (
     DATA_CSV_SOURCE,
-    CATALOG_CONFIG_FILE,
+    BUILD_CATALOG_CONFIG_FILE,
     MKDOCS_TEMPLATE_FILE,
     BUILD_DESTINATION_PATH,
     FILES_TO_COPY
@@ -21,21 +21,21 @@ class Bundler:
     def __call__(self, auto_numerate=False, *args, **kwargs):
         """Delete and recreate the build dir"""
 
-        cr = CsvReader()
-        with open(DATA_CSV_SOURCE, 'r', encoding='latin') as file:
-            cr.read(file)
-        
-        # Save catalog.json file just in case
-        with open(CATALOG_CONFIG_FILE, 'w') as file:
-            file.write(json.dumps(cr.catalog, indent=4))
-        
         # Remove and recreate build destination
         try:
             shutil.rmtree(BUILD_DESTINATION_PATH)
         except FileNotFoundError:
             pass
-
+        
         os.mkdir(BUILD_DESTINATION_PATH)
+
+        cr = CsvReader()
+        with open(DATA_CSV_SOURCE, 'r', encoding='latin') as file:
+            cr.read(file)
+        
+        # Save catalog.json file just in case
+        with open(BUILD_CATALOG_CONFIG_FILE, 'w') as file:
+            file.write(json.dumps(cr.catalog, indent=4))
 
         # generate docs
         fg = FileGenerator(cr.catalog)
