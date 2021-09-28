@@ -11,5 +11,6 @@ MKDOCS_TEMPLATE_FILE = 'catalog/mkdocs.yml'
 PRODUCT_TEMPLATE_FILENAME = 'catalog/templates/item.md'
 
 FILES_TO_COPY = [
-    ('catalog/index.md', f'{BUILD_DESTINATION_PATH}/index.md')
+    # Nav-Webpage-Name, Source, Destination
+    ('Home', 'catalog/index.md', f'{BUILD_DESTINATION_PATH}/index.md')
 ]

@@ -23,7 +23,8 @@ class CsvReader:
             "link": link
           }
     
-    def _append_to_catalog_structure(self, first_key: str, second_key: str, third_key: str, product: dict):
+    def _append_to_catalog_structure(self, first_key: str, second_key: str, third_key: str, product: dict, filename: str):
+        
         try:
             self.catalog[first_key]
         except KeyError:
@@ -35,9 +36,12 @@ class CsvReader:
             self.catalog[first_key][second_key] = {}
             
         try:
-            self.catalog[first_key][second_key][third_key].append(product)
+            self.catalog[first_key][second_key][third_key]['data'].append(product)
         except KeyError or ValueError:
-            self.catalog[first_key][second_key][third_key] = [product]
+            self.catalog[first_key][second_key][third_key] = {
+                'filename': filename,
+                'data': [product]
+            }
     
     def read(self, csv_file: TextIO):
         """read the data from the csv, and """
@@ -65,10 +69,11 @@ class CsvReader:
             if link and title:
                 product = self._build_single_product(web_name, line_number, title, content, link)
                 self._append_to_catalog_structure(
-                    f'{first_id}. {first_key}',
-                    f'{second_id}. {second_key}',
-                    f'{third_id}. {third_key}',
-                    product
+                    first_key=f'{first_id}. {first_key}',
+                    second_key=f'{second_id}. {second_key}',
+                    third_key=f'{third_id}. {third_key}',
+                    product=product,
+                    filename=f'{first_id}-{second_id}-{third_id}.md',
                 )
 
                 
