@@ -1,3 +1,6 @@
+# data section
+DATA_CSV_SOURCE = 'data/database.csv'
+
 # build section
 BUILD_DESTINATION_PATH = 'build'
 BUILD_ITEM_DESTINATION_PATH = f'{BUILD_DESTINATION_PATH}/files/'

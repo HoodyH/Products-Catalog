@@ -1,79 +1,106 @@
 {
-  "Elettronica Interno Quadro": {
-    "Alimentatori": {
-      "Alimentatori MM": [{
-        "title": "Alimentatori Multi-marca",
-        "content": "- Alimentatori\n- Switching\n - Switch",
-        "filename": "01_01_01_01_10",
-        "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVeODsHS6waSYx59?e=Uj4q8H"
-      }]
-    },
-    "Automazione": {
-      "Micro-PLC": [{
-        "filename": "01_02_01_01_10",
-        "title": "Micro PLC Logo e Moduli",
-        "content": "Micro PLC\n- Modulo logico\n- Logo\n- Scheda Logica",
-        "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVkqn7a8YLLzngEY?e=epgqPc"
-      }],
-      "PLC Siemens S7 1200": [{
-        "filename": "PLC_SIE_S7-1200",
-        "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVjk5ANpW6Y7AW4T?e=aPzcL3"
-      }]
-    }
-  },
-  "Elettromeccanica Interno Quadro": {
-    "Sezionamento": {
-      "Sezionatori Schneider": [
-        {
-          "id": "02_02_01_01_10",
-          "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVEVl7XQ4z9RBlwZ?e=RNxrWx"
+    "1. Elettronica Interno Quadro": {
+        "2. Automazione": {
+            "1. Micro PLC": [
+                {
+                    "id": "01_02_01_01_10",
+                    "row": "15",
+                    "title": "Micro PLC SIE Logo BA8",
+                    "content": "Micro PLC - Modulo logico -  Logo - Scheda Logica",
+                    "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVkqn7a8YLLzngEY?e=epgqPc"
+                }
+            ],
+            "2. PLC": [
+                {
+                    "id": "01_02_02_01_10",
+                    "row": "19",
+                    "title": "PLC SIE S7 1200",
+                    "content": "PLC - S7 1200 - ",
+                    "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVjk5ANpW6Y7AW4T?e=aPzcL3"
+                }
+            ]
         }
-      ]
     },
-    "Dialogo Operatore": {
-      "Pulsantiera Diametro 22 SNR": [{
-        "id": "02_06_02_01_10",
-        "title": "Pulsantiera Diametro 22 SNR",
-        "content": "",
-        "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVUSM5V-DJ879EOR?e=P610js"
-      }],
-      "Segnalazione SIR": [{
-        "id": "02_06_04_01_10",
-        "title": "Segnalazione SIR Mline",
-        "content": "Segnalazione -  Avvisatore - Acustico - Luminoso - Colonna - Semaforo - Sirena",
-        "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVY4yrLIBSMahrnX?e=ip6ZIa"
-      }]
-    }
-  },
-  "Elettromeccanica Bordo Macchina": {
-    "Connettori Sensori": {
-      "Connettori Sensori MM": [{
-        "id": "04_02_01_01_10",
-        "title": "Connettori Sensori MM",
-        "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVCn3EKqZ6rk_Dir?e=b1wFxC"
-      }]
-    },
-    "Connettori": {
-      "Connettori Industriali": [
-        {
-          "title": "Connettori Industriali ILM",
-          "id": "04_03_01_01_10",
-          "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVQGqQolZ0c1qVhG?e=2QNFMS"
+    "2. Elettromec. Interno Quadro": {
+        "2. Sezionamento": {
+            "1. Sezionatori": [
+                {
+                    "id": "02_02_01_01_10",
+                    "row": "118",
+                    "title": "Sezionatori SNR Vario",
+                    "content": "Sezionatori - Interuttore Generale",
+                    "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVEVl7XQ4z9RBlwZ?e=RNxrWx"
+                }
+            ]
         },
-        {
-          "title": "Connettori Industriali WEL",
-          "id": "04_03_01_03_20",
-          "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVKGAea5PrPjlETC?e=8NRqHj"
+        "6. Dialogo Operatore": {
+            "2. Pulsanteria \u00ef\u00bf\u00bd22": [
+                {
+                    "id": "02_06_02_01_10",
+                    "row": "174",
+                    "title": "Pulsanteria \u00ef\u00bf\u00bd22 SNR Pulsanti & Spie",
+                    "content": "Pulsanteria - \u00ef\u00bf\u00bd22 - Tasto - Pulsante - Selettore - Spia - Manipolatore - ",
+                    "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVUSM5V-DJ879EOR?e=AtJgPL"
+                },
+                {
+                    "id": "02_06_02_01_10",
+                    "row": "175",
+                    "title": "Pulsanteria \u00ef\u00bf\u00bd22 SNR Selettori",
+                    "content": "Pulsanteria - \u00ef\u00bf\u00bd22 - Tasto - Pulsante - Selettore - Spia - Manipolatore - ",
+                    "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVUSM5V-DJ879EOR?e=P610js"
+                }
+            ],
+            "4. Segnalazione": [
+                {
+                    "id": "02_06_04_01_10",
+                    "row": "189",
+                    "title": "Segnalazione SIR Mline",
+                    "content": "Segnalazione  -  Avvisatore - Acustico - Luminoso - Colonna - Semaforo - Sirena -",
+                    "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVY4yrLIBSMahrnX?e=ip6ZIa"
+                }
+            ]
         }
-      ]
     },
-    "Cavi Automazione": {
-      "Cavi Automazione MM": [{
-        "title": "Cavi automazione",
-        "content": "- Cavi Automazione\n- Catenaria\n- Posa Mobile",
-        "id": "04_07_01_01_10",
-        "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVNqVLNMJCOtDZaO?e=JuabkM"
-      }]
+    "4. Elettromecc. Bordo Macc.": {
+        "2. Connettori Sensori": {
+            "1. Connettori Sensori": [
+                {
+                    "id": "04_02_01_01_10",
+                    "row": "260",
+                    "title": "Connettori Sensori MM PHC",
+                    "content": "Connettori  - Sensori - M12 - M8 - Circolare - Spina - Presa - Alimentazione",
+                    "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVCn3EKqZ6rk_Dir?e=b1wFxC"
+                }
+            ]
+        },
+        "3. Connettori Industriali": {
+            "1. Connettori Industriali": [
+                {
+                    "id": "04_03_01_01_10",
+                    "row": "267",
+                    "title": "Connettori Industriali ILM CK",
+                    "content": "Connettori - Industriali - Spina - Presa - Alimentazione - Connessione",
+                    "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVQGqQolZ0c1qVhG?e=2QNFMS"
+                },
+                {
+                    "id": "04_03_01_03_20",
+                    "row": "269",
+                    "title": "Connettori Industriali WEI HA",
+                    "content": "Connettori - Industriali - Spina - Presa - Alimentazione - Connessione",
+                    "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVKGAea5PrPjlETC?e=8NRqHj"
+                }
+            ]
+        },
+        "7. Cavi Automazione": {
+            "1. Cavi Automazione": [
+                {
+                    "id": "04_07_01_01_10",
+                    "row": "292",
+                    "title": "Cavi Automazione MM KUD",
+                    "content": "Cavi Automazione, Catenaria, Posa Mobile",
+                    "link": "https://1drv.ms/x/s!AvjD8meJH0vAnVNqVLNMJCOtDZaO?e=JuabkM"
+                }
+            ]
+        }
     }
-  }
 }

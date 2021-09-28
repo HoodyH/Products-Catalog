@@ -80,4 +80,3 @@ if __name__ == '__main__':
     import json
     with open('catalog.json', 'w') as file:
         file.write(json.dumps(cr.catalog, indent=4))
-        

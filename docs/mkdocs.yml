@@ -1,25 +1,23 @@
 site_name: Documentazione Prodotti
 nav: 
 - Home: index.md
-- 1. Elettronica Interno Quadro:
-  - 1. Alimentatori:
-    - 1. Alimentatori MM: files/1-1-1.md
-  - 2. Automazione:
-    - 1. Micro-PLC: files/1-2-1.md
-    - 2. PLC Siemens S7 1200: files/1-2-2.md
-- 2. Elettromeccanica Interno Quadro:
-  - 1. Sezionamento:
-    - 1. Sezionatori Schneider: files/2-1-1.md
-  - 2. Dialogo Operatore:
-    - 1. Pulsantiera Diametro 22 SNR: files/2-2-1.md
-    - 2. Segnalazione SIR: files/2-2-2.md
-- 3. Elettromeccanica Bordo Macchina:
-  - 1. Connettori Sensori:
-    - 1. Connettori Sensori MM: files/3-1-1.md
-  - 2. Connettori:
-    - 1. Connettori Industriali: files/3-2-1.md
-  - 3. Cavi Automazione:
-    - 1. Cavi Automazione MM: files/3-3-1.md
+- 1. 1. Elettronica Interno Quadro:
+  - 1. 2. Automazione:
+    - 1. 1. Micro PLC: files/1-1-1.md
+    - 2. 2. PLC: files/1-1-2.md
+- 2. 2. Elettromec. Interno Quadro:
+  - 1. 2. Sezionamento:
+    - 1. 1. Sezionatori: files/2-1-1.md
+  - 2. 6. Dialogo Operatore:
+    - "1. 2. Pulsanteria \xEF\xBF\xBD22": files/2-2-1.md
+    - 2. 4. Segnalazione: files/2-2-2.md
+- 3. 4. Elettromecc. Bordo Macc.:
+  - 1. 2. Connettori Sensori:
+    - 1. 1. Connettori Sensori: files/3-1-1.md
+  - 2. 3. Connettori Industriali:
+    - 1. 1. Connettori Industriali: files/3-2-1.md
+  - 3. 7. Cavi Automazione:
+    - 1. 1. Cavi Automazione: files/3-3-1.md
 
 theme:
   name: material
